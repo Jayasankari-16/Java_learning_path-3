@@ -1,0 +1,47 @@
+/*Two friends, Dragon and Sloth, are writing a computer science examination series. 
+There are three subjects in this series: DSA, TOC, and DM. 
+Each subject carries 100 marks.You know the individual scores of both Dragon and Sloth in all 3 subjects.
+You have to determine who got a better rank.
+The rank is decided as follows:The person with a bigger total score gets a better rankIf the total scores are tied, 
+the person who scored higher in DSA gets a better rankIf the total score and the DSA score are tied, 
+the person who scored higher in TOC gets a better rankIf everything is tied, they get the same rank.*/
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+class Codechef
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		Scanner sc=new Scanner(System.in);
+		int t=sc.nextInt();
+		for(int i=0;i<t;i++){
+		    int ad=sc.nextInt();
+		    int bd=sc.nextInt();
+		    int cd=sc.nextInt();
+		    int as=sc.nextInt();
+		    int bs=sc.nextInt();
+		    int cs=sc.nextInt();
+		    int sumd=ad+bd+cd;
+		    int sums=as+bs+cs;
+		    if(sumd>sums){
+		        System.out.println("DRAGON");
+		    }else if (sumd<sums){
+		        System.out.println("SLOTH");
+		    }else if(sumd==sums){
+		        if(ad>as){
+		            System.out.println("DRAGON");
+		        }else if(ad<as){
+		            System.out.println("SLOTH");
+		        }else if(bd>bs){
+		            System.out.println("DRAGON");
+		        }else if(bd<bs){
+		            System.out.println("SLOTH");
+		        }else{
+		            System.out.println("TIE");
+		        }
+		    } 
+		}
+	}
+}
