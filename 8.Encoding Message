@@ -1,0 +1,38 @@
+/* Chef has a message, which is a string S with length N containing only lowercase English letters. It should be encoded in two steps as follows:
+Swap the first and second character of the string 
+S, then swap the 3rd and 4th character, then the 5th and 6th character and so on. 
+If the length of S is odd, the last character should not be swapped with any other.
+Replace each occurrence of the letter 'a' in the message obtained after the first step by the letter 'z', each occurrence of 'b' by 'y', each occurrence of 'c' by 'x', etc, and each occurrence of 'z' in the message obtained after the first step by 'a'.The string produced in the second step is the encoded message. 
+Help Chef and find this message.*/
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+class Codechef
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+	 Scanner in = new Scanner(System.in);
+        PrintWriter pw = new PrintWriter(System.out);
+
+        int t = in.nextInt();
+        for (int tt = 0; tt < t; tt++) {
+            int x = in.nextInt();
+            String s = in.next();
+            StringBuilder sb = new StringBuilder(), xx = new StringBuilder();
+            for (int i = 0; i < x - 1; i += 2) {
+                sb.append(s.charAt(i + 1));
+                sb.append(s.charAt(i));
+            }
+            if (x % 2 == 1) sb.append(s.charAt(x - 1));
+            for (int i = 0; i < x; i++) xx.append((char) ('a' + ('z' - sb.charAt(i))));
+            pw.println(xx);
+        }
+        pw.close();
+    }
+
+    static void debug(Object... obj) {
+        System.err.println(Arrays.deepToString(obj));
+	}
+}
