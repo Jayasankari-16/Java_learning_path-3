@@ -1,0 +1,34 @@
+/* There are 101 citizens in Chefland. It is election time in Chefland and 3 parties, A,B, and C are contesting the elections.
+Party A receives X A votes, party B receives X B  votes, and party C receives X C  votes.The constitution of Chefland requires a particular party to receive a clear majority to form the government.
+A party is said to have a clear majority if it receives strictly greater than 50 votes.
+If any party has a clear majority, print the winning party (A, B or C). Otherwise, print NOTA.*/
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+class Codechef
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		Scanner sc=new Scanner(System.in);
+		int t=sc.nextInt();
+		for(int i=0;i<t;i++){
+		    int A=sc.nextInt();
+		    int B=sc.nextInt();
+		    int C=sc.nextInt();
+		    if(A>50){
+		        System.out.println("A");
+		    }
+		    else if(B>50){
+		        System.out.println("B");
+		    }
+		    else if(C>50){
+		        System.out.println("C");
+		    }
+		    else{
+		        System.out.println("NOTA");
+		    }
+		}
+	}
+}
