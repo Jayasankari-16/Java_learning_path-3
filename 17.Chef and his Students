@@ -1,0 +1,26 @@
+/*  in case *><*, when students see Chef, their new configuration will be *<>*. 
+Chef sees that no students are talking to each other. So no one is punished. 
+While in case ><><, the new configuration of students will be <><>, Chef sees that student 2 and 3 are talking to each other and they will be punished.*/
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+class Codechef
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		Scanner sc=new Scanner(System.in);
+		int t=sc.nextInt();
+		while(t-->0){
+		    String s=sc.next();
+		    int count=0;
+		    for(int i=0;i<s.length()-1;i++){
+		        if(s.charAt(i)=='<' && s.charAt(i+1) == '>'){
+		            count++;
+		        }
+		    }
+		    System.out.println(count);
+		}
+	}
+}
