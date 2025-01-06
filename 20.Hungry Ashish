@@ -1,0 +1,31 @@
+/* It's dinner time. Ashish is very hungry and wants to eat something.
+He has X rupees in his pocket. Since Ashish is very picky, he only likes to eat either PIZZA or BURGER. 
+In addition, he prefers eating PIZZA over eating BURGER.
+The cost of a PIZZA is Y rupees while the cost of a BURGER is Z rupees.Ashish can eat at most one thing.
+Find out what will Ashish eat for his dinner.*/
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+class Codechef
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+	    Scanner sc=new Scanner(System.in);
+	    int t=sc.nextInt();
+	    for(int i=0;i<t;i++){
+	        int a=sc.nextInt();
+	        int b=sc.nextInt();
+	        int c=sc.nextInt();
+	        if(b<=a){
+	            System.out.println("PIZZA");
+	        } else if(c<=a){
+	            System.out.println("BURGER");
+	        }
+	        else{
+	            System.out.println("NOTHING");
+	        }
+	    }
+	}
+}
