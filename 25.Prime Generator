@@ -1,0 +1,32 @@
+/* Ram wants to generate some prime numbers for his cryptosystem. 
+Help him please! Your task is to generate all prime numbers between two given numbers.*/
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+class Codechef
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		Scanner sc=new Scanner(System.in);
+		int t=sc.nextInt();
+		while(t-->0){
+		    int n=sc.nextInt();
+		    int m=sc.nextInt();
+		    int i,j,k;
+		    for(i=n;i<=m;i++){
+		        k=1;
+		        for(j=2;j*j<=i;j++){
+		            if(i%j==0){
+		                k=0;
+		                break;
+		            }
+		        }
+		        if(k==1 && i!=1){
+		            System.out.println(i);
+		        }
+		    }
+		}
+	}
+}
