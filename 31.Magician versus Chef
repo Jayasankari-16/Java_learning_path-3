@@ -1,0 +1,38 @@
+/* When Chef was visiting a fair in Byteland, he met a magician.
+The magician had N boxes (numbered 1 through N) and a gold coin.
+He challenged Chef to play a game with him; if Chef won the game, he could have the coin, but if he lost, the magician would kidnap Chef.
+At the beginning of the game, the magician places the gold coin into the X-th box. Then, he performs S swaps.
+To win, Chef needs to correctly identify the position of the coin after all swaps.
+In each swap, the magician chooses two boxes A andB, moves the contents of box A (before the swap) to box B and the contents of box B (before the swap) to box A.*/
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+class Codechef
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+	   Scanner sc = new Scanner(System.in);
+		int t = sc.nextInt();
+		while(t-- > 0) {
+			
+			int n = sc.nextInt();
+			int x = sc.nextInt();
+			int s = sc.nextInt();
+			int a , b , coin = x ;
+			for (int i = 0 ; i < s ; i++) {
+				a = sc.nextInt();
+				b = sc.nextInt();
+				
+				if (coin == a) {
+					coin = b ;
+				}
+				else if (coin == b) {
+					coin = a ;
+				}
+			}
+			System.out.println(coin);
+		}
+	}
+}
