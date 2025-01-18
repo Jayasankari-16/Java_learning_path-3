@@ -1,0 +1,46 @@
+/* Chef is hosting a party at his house and N people are invited to it. Everyone has arrived and they are eager to make a group and chit-chat.
+The ith person prefers to be in a group of exactly Pi​ people (including himself). 
+A person who is not in a group of preferred size gets upset.
+Find whether Chef would be able to assign every person to a group such that everyone remains happy.*/
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+class Codechef
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+	    	Scanner sc = new Scanner(System.in);
+        int t = sc.nextInt();
+        for (int i = 0; i < t; i++) {
+            int n = sc.nextInt();
+            int [] P = new int[n];
+            for(int j =0;j<P.length;j++){
+                P[j]=sc.nextInt();
+            }
+            HashMap<Integer, Integer> hm = new HashMap<>();
+            for(int j=0;j<n;j++){
+                if(!hm.containsKey(P[j])){
+                    hm.put(P[j],1);
+                }
+                else {
+                    hm.put(P[j],hm.get(P[j])+1);
+                }
+            }
+            int count=0;
+            for(int key :hm.keySet()){
+                if ( hm.get(key)%key==0) {
+                    count++;
+                }
+                else{
+                    System.out.println("NO");
+                    break;
+                }
+            }
+            if(count==hm.size()){
+                System.out.println("YES");
+            }
+      }
+	}
+}
