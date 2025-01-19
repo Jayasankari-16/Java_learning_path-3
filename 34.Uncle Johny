@@ -1,0 +1,45 @@
+/* Vlad enjoys listening to music. He lives in Sam's Town.
+A few days ago he had a birthday, so his parents gave him a gift: MP3-player! Vlad was the happiest man in the world! Now he can listen his favorite songs whenever he wants!
+Vlad built up his own playlist. The playlist consists of N songs, each has a unique positive integer length. 
+Vlad likes all the songs from his playlist, but there is a song, which he likes more than the others. It's named "Uncle Johny".*/
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+class Codechef
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		Scanner sc = new Scanner(System.in);
+        int t = sc.nextInt();
+        for (int i = 0; i < t; i++) {
+            int n = sc.nextInt();
+            int [] arr = new int [n];
+            for(int j =0;j<n;j++){
+                arr[j] = sc.nextInt();
+            }
+            int k = sc.nextInt();
+            int length=arr[k-1];
+            int index =0;
+            Arrays.sort(arr);
+            int start =0;
+            int end = arr.length-1;
+            int mid =0;
+            while(start<=end){
+                mid = (start+end)/2;
+                if(arr[mid]==length){
+                    index = mid;
+                    break;
+                }
+                else if (arr[mid]>length){
+                    end = mid-1;
+                }
+                else if(arr[mid]<length){
+                    start = mid +1;
+                }
+            }
+            System.out.println(index+1);
+     }
+	}
+}
