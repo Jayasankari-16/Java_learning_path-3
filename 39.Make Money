@@ -1,0 +1,42 @@
+/* Chef has N bags and an integer X. 
+The ith bag contains Ai ​coins such that Ai≤X.In one operation, Chef can:Pick any bag and increase its coins to X
+X. Formally, if he choses the ith  bag, he can set Ai=X.
+Given that the cost of performing each operation is (C≤X) coins and Chef can perform the above operation any (possibly zero) number of times,
+determine the maximum value of(∑i=1NAi)− (total cost paid by Chef),if Chef performs the operations optimally.*/
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+class Codechef
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+	    Scanner sc=new Scanner(System.in);
+	    int t=sc.nextInt();
+	    while(t>0){
+	        t--;
+	        int n=sc.nextInt();
+	        int x=sc.nextInt();
+	        int c=sc.nextInt();
+	        int[]ar=new int[n];
+	        long sum=(long)0;
+	        for(int i=0;i<n;i++){
+	            ar[i]=sc.nextInt();
+	            sum+=ar[i];
+	        }
+	        Arrays.sort(ar);
+	        for(int i=0;i<n;i++){
+	            if((x-ar[i])>(c)){
+	                sum-=ar[i];
+	                sum+=x;
+	                sum-=c;
+	            }
+	            else{
+	                break;
+	            }
+	        }
+	        System.out.println(sum);
+	    }
+	}
+}
