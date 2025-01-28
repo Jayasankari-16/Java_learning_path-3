@@ -1,0 +1,52 @@
+/* Chef wants to buy a new laptop. However, he is confused about which laptop to buy out of 10 different laptops.
+He asks his N friends for their recommendation. The ith friend recommends the Chef to buy the A i​th  laptop 
+(1≤A i≤10).Chef will buy the laptop which is recommended by maximum number of friends. Determine which laptop Chef buys.
+Print CONFUSED if there are multiple laptops having maximum number of recommendations.*/
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+class Codechef
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+        Scanner sc = new Scanner(System.in);
+		int t = sc.nextInt();
+		
+		while(t-->0) {
+		    int n = sc.nextInt();
+            int[] lap = new int[10];
+            int[] fr = new int[n];
+
+            for (int i = 0; i < n; i++) {
+                fr[i] = sc.nextInt();
+                lap[fr[i] - 1]++;
+            }
+
+            int maxCount = lap[0];
+            int index = 0;
+            for (int i = 1; i < 10; i++) {
+                if (maxCount < lap[i]) {
+                    maxCount = lap[i];
+                    index = i;
+                }
+            }
+            
+            for (int i = 0; i < 10; i++) {
+                if (index == i) {
+                    continue;
+                }
+                if (maxCount == lap[i]) {
+                    maxCount = -1;
+                    break;
+                }
+            }
+            if (maxCount == -1) {
+                System.out.println("CONFUSED");
+            } else {
+                System.out.println(index + 1);
+            }
+		}
+	}
+}
