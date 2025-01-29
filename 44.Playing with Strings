@@ -1,0 +1,28 @@
+/* For Chef, this is much harder than cricket and he is asking for your help. 
+Tell him whether it is possible to change the string S to the target string R only using operations of the given type.*/
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+class Codechef
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		Scanner sc = new Scanner(System.in);
+		 int t = sc.nextInt();
+		 while(t-->0){
+		     int n = sc.nextInt();
+		      String s = sc.next();
+		      String r = sc.next();
+		      char ch1[] = s.toCharArray();
+		      char ch2[] = r.toCharArray();
+		      Arrays.sort(ch1);
+		      Arrays.sort(ch2);
+		      if(Arrays.equals(ch1,ch2))
+		      System.out.println("YES");
+		     else
+		     System.out.println("NO");
+		 }
+	}
+}
