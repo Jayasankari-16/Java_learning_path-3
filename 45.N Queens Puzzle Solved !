@@ -1,0 +1,30 @@
+/* Although the formula is valid for large N, Chef is interested in finding the value of function 
+f(N) = (0.143⋅N) N for a given small value of N.
+Since Chef is busy understanding the proof of the formula, please help him calculate this value.
+Print the answer rounded to the nearest integer.
+That is, if the actual value of f(N) is x,Print ⌊x⌋ if x−⌊x⌋<0.5Otherwise, print ⌊x⌋+1where ⌊x⌋ denotes the floor of x.*.
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+class Codechef
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+        Scanner sc=new Scanner(System.in);
+        int t=sc.nextInt();
+        while(t!=0){
+            long n=sc.nextInt();
+            double ans=(0.143*n);
+            ans=Math.pow(ans,n);
+            if(ans-Math.floor(ans)<0.5){
+                System.out.println((long)Math.floor(ans));
+            }
+            else{
+                System.out.println((long)Math.floor(ans)+1);
+            }
+            t--;
+        }
+	}
+}
