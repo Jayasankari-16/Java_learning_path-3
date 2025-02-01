@@ -1,0 +1,30 @@
+/* You have a binary string S of length N.
+In one operation you can select a substring of S and reverse it. 
+For example, on reversing the substring S[2,4] for S=11000, we change 11000→10010.Find the minimum number of operations required to sort this binary string.
+It can be proven that the string can always be sorted using the above operation finite number of times.*/
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+class Codechef
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+        Scanner sc=new Scanner(System.in);
+        int t=sc.nextInt();
+        while(t>0){
+            int n=sc.nextInt();
+            String s=sc.next();
+            int count=0;
+            for(int i=0;i<n-1;i++){
+                if(s.substring(i,i+2).equals("10")){
+                    count++;
+                    i++;
+                }
+            }
+            System.out.println(count);
+            t--;
+        }
+	}
+}
