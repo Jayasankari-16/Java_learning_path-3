@@ -1,0 +1,43 @@
+/* As you might remember, the collector of Siruseri had ordered a complete revision of the Voters List. 
+He knew that constructing the list of voters is a difficult task, prone to errors.
+Some voters may have been away on vacation, others may have moved during the enrollment and so on.
+To be as accurate as possible, he entrusted the task to three different officials.
+Each of them was to independently record the list of voters and send it to the collector.
+In Siruseri, every one has a ID number and the list would only list the ID numbers of the voters and not their names.
+The officials were expected to arrange the ID numbers in ascending order in their lists.
+Voter ID numbers are unique and not duplicated in any lists.*/
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+class Codechef
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		Scanner sc=new Scanner(System.in);
+		int n1=sc.nextInt();
+		int n2=sc.nextInt();
+		int n3=sc.nextInt();
+		int sum=n1+n2+n3;
+		int[]ar=new int[sum];
+		for(int j=0;j<sum;j++){
+		    ar[j]=sc.nextInt();
+		}
+		Arrays.sort(ar);
+		int count=0;
+		for(int k=0;k<sum-1;k++){
+		    if(ar[k]==ar[k+1]){
+		    count++;
+		    k++;
+		    }
+		}
+	   System.out.println(count++);
+	   for(int k=0;k<sum-1;k++){
+	       if(ar[k]==ar[k+1]){
+	           System.out.println(ar[k]);
+	           k++;
+	       }
+	   }
+	}
+}
