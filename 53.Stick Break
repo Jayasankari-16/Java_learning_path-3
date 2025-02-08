@@ -1,0 +1,26 @@
+/* Chef has a stick of length L. Chef wants to break the stick into K parts such that each part has a non-zero length.
+Let the lengths of the K parts be A1,A2,…,AK (Note that A1+A2+…+A=LA and Ai is a positive integer for all i). Chef wants to minimize the value of ∑i=1K−1i+1−Ai∣i=1∑​ ∣A i+1 −Ai​ ∣.
+Can you help Chef? (Here ∣x∣ denotes the absolute value of x)Under the given constraints it will always be possible to break the stick into *K parts of non-zero lengths.*/
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+class Codechef
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		Scanner sc=new Scanner(System.in);
+		int t=sc.nextInt();
+		while(t-->0){
+		    int n=sc.nextInt();
+		    int k=sc.nextInt();
+		    if(n%k==0){
+		        System.out.println(0);
+		    }
+		    else{
+		        System.out.println(1);
+		    }
+		}
+	}
+}
