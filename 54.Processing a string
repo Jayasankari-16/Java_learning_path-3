@@ -1,0 +1,24 @@
+/* Given an alphanumeric string made up of digits and lower case Latin characters only, find the sum of all the digit characters in the string.*/
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+class Codechef
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+        Scanner sc=new Scanner(System.in);
+        int t=sc.nextInt();
+        while(t-->0){
+            String s=sc.next();
+            int ans=0;
+            for(char c:s.toCharArray()){
+                if((c>='1'&&c<='9')){
+                    ans+=(int)Character.getNumericValue(c);
+                }
+            }
+            System.out.println(ans);
+      }
+	}
+}
