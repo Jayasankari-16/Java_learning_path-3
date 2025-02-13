@@ -1,0 +1,43 @@
+/* Alice and Bob went to a pet store. 
+There are N animals in the store where the ith animal is of type Ai.
+Alice decides to buy some of these N animals. 
+Bob decides that he will buy all the animals left in the store after Alice has made the purchase.
+Find out whether it is possible that Alice and Bob end up with exactly same multiset of animals.*/
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+class Codechef
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+         Scanner sc=new Scanner(System.in);
+         int t=sc.nextInt();
+         while(t-->0){
+             int n=sc.nextInt();
+             int[]a=new int[n];
+             for(int i=0;i<n;i++){
+                 a[i]=sc.nextInt();
+             }
+             Arrays.sort(a);
+             int[] count=new int[101];
+             for(int i=0;i<n;i++){
+                 count[a[i]]++;
+             }
+             boolean found=true;
+             for(int i=0;i<100;i++){
+                 if(count[i]%2==1){
+                     found=false;
+                     break;
+                 }
+             }
+             if(found){
+                 System.out.println("YES");
+             }
+             else{
+                 System.out.println("NO");
+             }
+         }
+	}
+}
