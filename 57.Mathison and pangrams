@@ -1,0 +1,32 @@
+/* Mathison recently inherited an ancient papyrus that contained some text. Unfortunately, the text was not a pangram. 
+Now, Mathison has a particular liking for holoalphabetic strings and the text bothers him.
+The good news is that Mathison can buy letters from the local store in order to turn his text into a pangram.
+However, each letter has a price and Mathison is not very rich.
+Can you help Mathison find the cheapest way to obtain a pangram?*/
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+class Codechef
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		Scanner sc=new Scanner(System.in);
+		int t=sc.nextInt();
+		for(int k=0;k<t;k++){
+		    int[]a=new int[26];
+		    for(int i=0;i<26;i++){
+		        a[i]=sc.nextInt();
+		    }
+		    String s=sc.next();
+		    int total=0;
+		    for(int i='a';i<='z';i++){
+		        if(s.indexOf(i)==-1){
+		            total=total+a[i-'a'];
+		        }
+		    }
+		    System.out.println(total);
+		}
+	}
+}
