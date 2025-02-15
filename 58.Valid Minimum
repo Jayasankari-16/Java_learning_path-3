@@ -1,0 +1,34 @@
+/* There are 3 hidden numbers A,B,C.
+You somehow found out the values of min(A,B),min(B,C), and min(C,A).
+Determine whether there exists any tuple (A,B,C) that satisfies the given values of min(A,B),min(B,C),min(C,A)*/
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+class Codechef
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		// your code goes here
+		Scanner sc = new Scanner(System.in);
+		int t = sc.nextInt();
+		
+		while(t-->0){
+		    
+		    int[] mins = new int[3];
+		    
+		    mins[0] = sc.nextInt();
+		    mins[1] = sc.nextInt();
+		    mins[2] = sc.nextInt();
+		    
+		    Arrays.sort(mins);
+		    
+		    if(mins[0] == mins[1]){
+		        System.out.println("YES");
+		    }else{
+		        System.out.println("NO");
+		    }
+		}
+	}
+}
