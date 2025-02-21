@@ -1,0 +1,34 @@
+/* Chef has a binary strings S of length N, and an integer K.
+Hitesh wants to maximize the decimal representation of 
+S using K operations of the following type:
+Type 1: Insert 0 at any position in the string.
+Type 2: Change any 0 to 1.
+Help Hitesh find the modified string with maximum possible decimal representation after performing at most K operations.*/
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+class Codechef
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		int t ;
+		Scanner sc = new Scanner(System.in);
+		t = sc.nextInt();
+		while(t-->0){
+		    int n = sc.nextInt();
+		    int k = sc.nextInt();
+		    String s = sc.next();
+		    StringBuffer sb = new StringBuffer(s);
+		    for(int i=0;i<k;i++){
+		        if(sb.charAt(0)=='0'){
+		            sb.replace(0,1,"1");
+		        }else{
+		            sb.append("0");
+		        }
+		    }
+		    System.out.println(sb);
+		}
+	}
+}
