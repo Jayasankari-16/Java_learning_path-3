@@ -1,0 +1,37 @@
+/* Chef has recently got a broadband internet connection. His history of internet data usage is provided as below.
+During the first T1 minutes, the internet data used was D1 MBs per minute, and during the next T2 minutes, it was D2 MBs per minute, and so on till during last TN minutes it was DN MBs per minute.
+The internet provider charges the Chef 1 dollar for every 1 MB data used, except for the first K minutes, when the internet data is free as part of the plan provided to Chef.
+Please find out the total amount that Chef has to pay the internet provider (in dollars).*/
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+class Codechef
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+        Scanner sc=new Scanner(System.in);
+        int t=sc.nextInt();
+        while(t-->0){
+            int n=sc.nextInt();
+            int k=sc.nextInt();
+            int bill=0;
+            for(int i=1;i<=n;i++){
+                int m=sc.nextInt();
+                int r=sc.nextInt();
+                if(k==0){
+                    bill+=m*r;
+                }
+                else if(k>=m){
+                    k-=m;
+                }
+                else if(k<m){
+                    bill+=(m-k)*r;
+                    k=0;
+                }
+            }
+            System.out.println(bill);
+        }
+	}
+}
