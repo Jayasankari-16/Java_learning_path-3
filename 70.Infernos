@@ -1,0 +1,32 @@
+/* Ved started playing a new mobile game called Fighting Clans. An army of 
+N enemies is approaching his base. The i th  enemy has H i​  health points. An enemy gets killed if his health points become 0.
+Ved defends his base using a weapon named Inferno. He can set the Inferno to one of the following two modes:
+Single-Target Mode: In one second, the Inferno can target exactly one living enemy and cause damage of at most 
+X health points.Multi-Target Mode: In one second, the Inferno can target all living enemies and cause damage of 1 health point to each of them.*/
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+class Codechef
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		Scanner sc=new Scanner(System.in);
+		int t=sc.nextInt();
+		while(t-->0){
+		    int n=sc.nextInt();
+		    int m=sc.nextInt();
+		    int[]a=new int[n];
+		    for(int i=0;i<n;i++){
+		        a[i]=sc.nextInt();
+		    }
+		    Arrays.sort(a);
+		    int time=0;
+		    for (int i = 0; i < n; i++) {
+		        time += (int) Math.ceil((double)a[i]/m);
+		    } 
+		    System.out.println(Math.min(time,a[n-1]));
+		}
+	}
+}
