@@ -1,0 +1,38 @@
+/* In the bustling CodeChef office, the entrance is equipped with a high-tech card swipe system.
+Each employee is assigned a unique ID card that they use to swipe in and out of the building.
+The system records every swipe, capturing the first swipe of an ID as in, second as out, third as in, and so on.
+Given an array A consisting of N IDs denoting N swipes throughout the day, find the maximum number of people in the office at any time.
+Note that there is nobody inside the office before the first swipe.*/
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+class Codechef
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		Scanner s = new Scanner(System.in);
+        int t = s.nextInt();
+        while(t-->0){
+            int N = s.nextInt();
+            HashMap<Integer,Integer> A = new HashMap<>();
+            int curr=0,maxm=0;
+            
+            for(int i=0;i<N;i++){
+                int id = s.nextInt();
+                
+                if(!(A.containsKey(id))){
+                    curr++;
+                    A.put(id,1);
+                }else{
+                    curr--;
+                    A.remove(id);
+                }
+                
+                maxm = maxm>curr?maxm:curr;
+            }
+            System.out.println(maxm);
+        }
+	}
+}
