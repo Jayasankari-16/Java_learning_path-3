@@ -1,0 +1,31 @@
+/* There are N seats in a row.
+You are given a string S with length N; for each valid i, the i-th character of S is '0' if the i-th seat is empty or '1' if there is someone sitting in that seat.
+Two people are friends if they are sitting next to each other. 
+Two friends are always part of the same group of friends.
+Can you find the total number of groups?*/
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+class Codechef
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		Scanner sc=new Scanner(System.in);
+		int t=sc.nextInt();
+		while(t-->0){
+		    String s=sc.next().concat("0");
+		    int count=0;
+		    for(int i=1;i<s.length();i++)
+		    {
+		        char c=s.charAt(i-1);
+		        char ch=s.charAt(i);
+		        if(ch=='0' && c=='1'){
+		        count++;
+		        }
+		    }
+		    System.out.println(count);
+		}
+	}
+}
