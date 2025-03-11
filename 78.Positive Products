@@ -1,0 +1,32 @@
+/* You are given an array A of length N. Find the number of pairs of indices 
+(i,j) such that 1≤i<j≤NAi⋅Aj>0*/
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+class Codechef
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		Scanner sc=new Scanner(System.in);
+		int t=sc.nextInt();
+		for(int i=0;i<t;i++){
+		    long p=0,ne=0;
+		    int n=sc.nextInt();
+		    int arr[]=new int[n];
+		    for(int j=0;j<n;j++){
+		        arr[j]=sc.nextInt();
+		        if(arr[j]>0){
+		            p++;
+		        }
+		        else if(arr[j]<0){
+		            ne++;
+		        }
+		    }
+		    long sum=((p-1)*p)/2+((ne-1)*ne)/2;
+		    System.out.println(sum);
+		}
+	}
+}
+
