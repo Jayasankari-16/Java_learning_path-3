@@ -1,0 +1,34 @@
+/* Given an array A of length N, your task is to find the element which repeats in A maximum number of times as well as the corresponding count. 
+In case of ties, choose the smaller element first.*/
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+class Codechef
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		Scanner sc=new Scanner(System.in);
+		int t=sc.nextInt();
+		while(t>0){
+		    int n=sc.nextInt();
+		    int a[]=new int[10000];
+		    int i;
+		    for(i=0;i<=n-1;i++){
+		        a[sc.nextInt()-1]++;
+		    }
+		    int max=0;
+		    for(i=0;i<=9999;i++){
+		        if(a[i]>a[max])
+		        max=i;
+		        else if(a[i]==a[max]){
+		            if(i<max)
+		            max=i;
+		        }
+		    }
+		    System.out.println((max+1)+" "+a[max]);
+		    t--;
+		 }
+   } 
+ }
