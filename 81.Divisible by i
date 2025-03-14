@@ -1,0 +1,33 @@
+/* You are given an integer N.Construct a permutation P of length N such thatFor all (1≤i≤N−1),
+i divides abs(Pi+1−Pi).Recall that a permutation of length N is an array where every integer from 1 to N occurs exactly once.
+It can be proven that for the given constraints at least one such P always exists.*/
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+class Codechef
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+	 Scanner scanner = new Scanner(System.in);
+        int t = scanner.nextInt();
+        while (t-->0)
+        {
+            int n = scanner.nextInt();
+            ArrayList<Integer> al = new ArrayList<>();
+            int i=0;
+            for(;i<n/2;i++)
+            {
+                al.add(n-i);
+                al.add(i+1);
+            }
+            if(n%2!=0)
+                al.add(i+1);
+            Collections.reverse(al);
+            for(int num:al)
+            System.out.print(num+" ");
+            System.out.println();
+        }
+	}
+}
