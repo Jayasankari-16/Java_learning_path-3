@@ -1,0 +1,43 @@
+/* Chef has N small boxes arranged on a line from 1 to N.
+For each validi, the weight of the i-th box is Wi.
+Chef wants to bring them to his home, which is at the position 0.
+He can hold any number of boxes at the same time; however, the total weight of the boxes he's holding must not exceed K at any time, 
+and he can only pick the ith box if all the boxes between Chef's home and the ith box have been either moved or picked up in this trip.
+Therefore, Chef will pick up boxes and carry them home in one or more round trips.
+Find the smallest number of round trips he needs or determine that he cannot bring all boxes home.*/
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+class Codechef
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+			Scanner sc=new Scanner(System.in);
+		int t=sc.nextInt();
+		while(t-->0){
+		    int n=sc.nextInt();
+		    int k=sc.nextInt();
+		    int weights[]=new int[n];
+		    for(int i=0;i<n;i++){
+		        weights[i]=sc.nextInt();
+		    }
+            int trips=0;
+            int i=0;
+            while(i<n){
+            if(weights[i]>k){
+                trips=-1;
+                break;
+            }
+            int currentWeight=0;
+            while(i<n && currentWeight+weights[i]<=k){
+                currentWeight+=weights[i];
+                i++;
+            }
+            trips++;
+            }
+            System.out.println(trips);
+		}   
+	}
+}
