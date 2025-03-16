@@ -1,0 +1,32 @@
+/* Chef is very hungry. So, Chef goes to a shop selling burgers.
+The shop has 2 types of burgers:Normal burgers, which cost X rupees eachPremium burgers, which cost 
+Y rupees each (where Y>X)Chef has R rupees. Chef wants to buy exactly N burgers. 
+He also wants to maximize the number of premium burgers he buys.
+Determine the number of burgers of both types Chef must buy.
+Output −1 if it is not possible for Chef to buy N burgers.*/
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+class Codechef
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		Scanner sc=new Scanner(System.in);
+		int t=sc.nextInt();
+		for(int i=0;i<t;i++){
+		    int x=sc.nextInt();
+		    int y=sc.nextInt();
+		    int n=sc.nextInt();
+		    int r=sc.nextInt();
+		    if(r<n*x){
+		        System.out.println(-1);
+		    }
+		    else{
+		        int p=Math.min(n,((r-(x*n))/(y-x)));
+		        System.out.println(n-p+" "+p);
+		    }
+		}
+	}
+}
