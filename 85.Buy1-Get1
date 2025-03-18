@@ -1,0 +1,43 @@
+/* One day Alice visited Byteland to purchase jewels for her upcoming wedding anniversary.
+In Byteland, every Jewelry shop has their own discount methods to attract the customers.
+One discount method called Buy1-Get1 caught Alice's attention. That is, Alice buys one jewel, then she can get one additional jewel with the same color without charge by Buy1-Get1.
+Alice lists the needed jewels as a string S, each letter denotes one jewel, 
+and the same letters denote the same colors of jewels, and the different letters denote the different colors of jewels.
+The cost of each jewel is 1. Your task is to calculate the minimum cost for getting all the jewels Alice listed.*/
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+class Codechef
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		Scanner sc=new Scanner(System.in);
+		int t=sc.nextInt();
+		for(int i=0;i<t;i++){
+		    
+		    String s=sc.next();
+		    int n=s.length();
+		    HashMap<Character,Integer> p = new HashMap<>();
+		    for(int j=0;j<n;j++){
+		        if(!p.containsKey(s.charAt(j))){
+		            p.put(s.charAt(j),1);
+		        }
+		        else{
+		            p.put(s.charAt(j),p.get(s.charAt(j))+1);
+		        }
+		    }
+		    int cost=0;
+		    for(char key:p.keySet()){
+		        if(p.get(key)%2==0){
+		            cost=cost+ (p.get(key)/2);
+		        }
+		        else{
+		            cost=cost+((p.get(key)+1)/2);
+		        }
+		    }
+		    System.out.println(cost);
+		}
+	}
+}
