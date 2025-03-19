@@ -1,0 +1,41 @@
+/* Chef loves research! Now he is looking for subarray of maximal length with non-zero product.
+Chef has an array A with N elements: A1, A2, ..., AN.
+Subarray Aij of array A is elements from index i to index j: Ai, Ai+1, ..., Aj.
+Product of subarray Aij is product of all its elements (from ith to jth).*/
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+class Codechef
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		Scanner sc=new Scanner(System.in);
+		int n=sc.nextInt();
+		int[]a=new int[n];
+		for(int i=0;i<n;i++){
+		    a[i]=sc.nextInt();
+		}
+		long product=1;
+		int l=0;
+		int max=0;
+		for(int j=0;j<n;j++){
+		    product*=a[j];
+		    l++;
+		    if(product==0){
+		        if(l-1>max){
+		            max=l-1;
+		        }
+		        product=1;
+		        l=0;
+		    }
+		    if(product!=0 && j==n-1){
+		        if(l>max){
+		            max=l;
+		        }
+		    }
+		}
+		System.out.println(max);
+	}
+}
