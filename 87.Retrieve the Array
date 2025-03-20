@@ -1,0 +1,33 @@
+/* Now, Chef has lost the original array A and needs your help to recover it, given array B. 
+It is guaranteed that Chef has obtained the array B from a valid array A.*/
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+class Codechef
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		Scanner sc=new Scanner(System.in);
+		int t=sc.nextInt();
+		while(t>0){
+		    int n=sc.nextInt();
+		    long b[]=new long[n];
+		    long a[]=new long[n];
+		    int i;
+		    long sumb=0;
+		    long suma;
+		    for(i=0;i<=n-1;i++){
+		        b[i]=sc.nextLong();
+		        sumb+=b[i];
+		    }
+		    suma=sumb/(n+1);
+		    for(i=0;i<=n-1;i++){
+		        System.out.print(b[i]-suma+" ");
+		    }
+		    System.out.println();
+		    t--;
+		}
+	}
+}
