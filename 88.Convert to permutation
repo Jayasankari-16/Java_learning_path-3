@@ -1,0 +1,40 @@
+/* You are given an array A of size N. In one operation, you can:
+Choose an index (1≤i≤N) and increase Ai by 1.
+Find the minimum number of operations required to convert the array A into a permutation of size N.
+If it is impossible to do so, print −1.Note that a permutation of size N contains each element from 1 to N exactly once*/
+
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+class Codechef
+{
+    private static Scanner sc = new Scanner(System.in);
+	public static void main (String[] args) throws java.lang.Exception
+	{
+    	long t,s;
+    	t = sc.nextLong();
+    	while(t-->0){
+        	s = sc.nextLong();
+    	    long arr[] = new long[(int)s];
+    	    for(int i = 0; i < s; i++){
+    	        arr[i] = sc.nextLong();
+    	    }
+            Arrays.sort(arr);
+            long k = 0, sum = 0;
+            for(int i = 0; i < s; i++){
+                if(arr[i]>i+1){
+                    k = -1;
+                } else{
+                    sum += i+1-arr[i];
+                }
+            }
+            if(k==-1){
+                System.out.println(-1);
+            }else{
+                System.out.println(sum);
+            }
+        }
+	}
+}
