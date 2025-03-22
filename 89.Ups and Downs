@@ -1,0 +1,36 @@
+/* Problem descriptionYou will be given a zero-indexed array A.
+You need to rearrange its elements in such a way that the following conditions are satisfied:
+A[i] ≤ A[i+1] if i is even.
+A[i] ≥ A[i+1] if i is odd.
+In other words the following inequality should hold: A[0] ≤ A[1] ≥ A[2] ≤ A[3] ≥ A[4], and so on. 
+Operations ≤ and ≥ should alter.*/
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+class Codechef
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		Scanner sc=new Scanner(System.in);
+		int a=sc.nextInt();
+		while(a-->0){
+		    int b=sc.nextInt();
+		    int []ar=new int[b];
+		    for(int i=0;i<b;i++){
+		        ar[i]=sc.nextInt();
+		    }
+		    Arrays.sort(ar);
+		    for(int i=1;i<b-1;i=i+2){
+		        int temp=ar[i+1];
+		        ar[i+1]=ar[i];
+		        ar[i]=temp;
+		    }
+		    for(int i=0;i<b;i++){
+		        System.out.print(ar[i]+" ");
+		    }
+		    System.out.println();
+		}
+	}
+}
