@@ -1,0 +1,50 @@
+/* Chef is learning linear algebra. Recently, he learnt that for a square matrix M,trace(M) is defined as the sum of all elements on the main diagonal of M
+(an element lies on the main diagonal if its row index and column index are equal).
+Now, Chef wants to solve some excercises related to this new quantity, so he wrote down a square matrix 
+A with size N×N. A square submatrix of A with size l×l is a contiguous block of l×l elements of A. Formally, if B is a submatrix of A with size l×l, then there must be integers 
+r and c(1≤r,c≤N+1−l) such that Bi,j =A r+i−1,c+j−1for each 1≤i,j≤l.Help Chef find the maximum trace of a square submatrix of A.*/
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+class Codechef
+{
+    public static int submatrix(int ar[][],int i,int j,int sum){
+    if(i==ar.length || j>=ar.length){
+        return sum;
+    }
+     sum+=ar[i][j];
+   
+   
+    return  submatrix(ar, i+1,j+1,sum);
+    }
+	public static void main (String[] args) throws java.lang.Exception
+	{
+         Scanner sc=new Scanner(System.in);
+         int t=sc.nextInt();
+         while(t-->0){
+             int n=sc.nextInt();
+             int ar[][]=new int[n][n];
+             for(int i=0;i<n;i++){
+                 for(int j=0;j<n;j++){
+                     ar[i][j]=sc.nextInt();
+                 }
+             }
+             int max=0;
+             for(int i=0;i<ar.length;i++){
+                 int ans= submatrix(ar,i,0,0);
+                 if(ans>max){
+                     max=ans;
+                 }
+             }
+             for(int i=0;i<ar.length;i++){
+                 int ans= submatrix(ar,0,i,0);
+                 if(ans>max){
+                     max=ans;
+                 }
+             }
+             System.out.println(max);
+         }
+	}
+}
